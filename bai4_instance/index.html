@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<title> Vue JS </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<link rel="stylesheet" href="vendor/bootstrap.css">
+	<link rel="stylesheet" href="vendor/font-awesome.css">
+ 	<link rel="stylesheet" href="style.css">
+</head>
+<body >
+	<div class="container">
+		<div id="app1">
+			<h4>{{ title }}</h4>
+			<button ref="myButton">Change</button>
+		</div>
+		<div id="app2">
+			<h4>Change something from app1</h4>
+			<button @click="change">Change VM1</button>
+		</div>
+		<div id="app3">
+			
+		</div>
+		<hello></hello>	
+	</div>
+</body>
+<script type="text/javascript" src="vendor/bootstrap.js"></script>
+<script type="text/javascript" src="vendor/vue.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>

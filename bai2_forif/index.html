@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<title> Vue JS </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<link rel="stylesheet" href="vendor/bootstrap.css">
+	<link rel="stylesheet" href="vendor/font-awesome.css">
+ 	<link rel="stylesheet" href="style.css">
+</head>
+<body >
+	<div class="container">
+		<div id="app">
+			<p v-if="show">Can you see me</p>
+			<p v-else>Now you see me</p>
+			<template v-if="show"> <!-- dùng để nhóm (có thể dùng div) -->
+				<h1>H1</h1>
+				<p>The p</p>
+			</template>
+			<button @click="show = !show" class="btn btn-danger">Switch</button>
+		</div>
+
+		<div id="app2">
+			<ul>
+				<li v-for="hocsinh in nhieuhocsinh"> {{ hocsinh }}</li>
+			</ul>
+			<button @click="nhieuhocsinh.push('TA')">Add HS</button>
+			<br>
+			<ul>
+				<li v-for="(hocsinh,index) in nhieuhocsinh"> {{ hocsinh }} - {{ index }}</li> <!-- () dùng để gom cả index -->
+			</ul>
+			<template v-for="(hocsinh,index) in nhieuhocsinh">
+				<h3>{{ hocsinh }}</h3>
+				<p>({{ index }})</p>
+			</template>
+			<span v-for="n in 10">{{ n }}</span>
+			<ul>
+				<li v-for="person in persons">
+					<div v-for="(value,key) in person">{{ key }}: {{ value }}</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="vendor/bootstrap.js"></script>
+<script type="text/javascript" src="vendor/vue.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>

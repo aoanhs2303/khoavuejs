@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<title> Example </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<link rel="stylesheet" href="vendor/bootstrap.css">
+	<link rel="stylesheet" href="vendor/font-awesome.css">
+ 	<link rel="stylesheet" href="style.css">
+</head>
+<body >
+	<div class="container">
+		<div id="app">
+			<h1 v-once>{{ title }}</h1>
+			<input type="text" v-on:input="myFunction">
+			<!-- /*Thay: v-on: == @  : @input*/ -->
+			<p>{{ title }} - <a v-bind:href="link" class="btn btn-info btn-sm"> Google </a></p>
+			<!-- /*Thay: v-bind: == : . :href */ -->
+			<p>Function: {{ sayHello() }}</p>
+			<p>{{ say() }}</p>
+			<br>
+			<p v-html="vhtml"></p>
+			<br>
+
+		</div>
+
+		<div id="app2">
+			<p v-on:mousemove="updateXY">Tọa độ: {{ x }} / {{ y }}</p>
+			<button v-on:click="tang" class="btn btn-success">+</button>
+			<h3 class="text-primary">{{ counter * 2 > 10 ? 'Greater' : 'Smaller' }}</h3>
+			<input type="text" v-on:keyup.enter.space="alertMe">
+			<p>{{ output }}</p> <!-- dùng như biến -->
+		</div>	
+		
+		<br>
+		<div id="app3">
+			<input type="text" v-model="name">
+			<h5>{{ name }}</h5>
+		</div>
+
+		<div id="app4">
+			<div class="demo" 
+				@click="toggleData = !toggleData" :class="{red: toggleData}"></div>
+			<div class="demo" :class="divClass"></div>
+			<div class="demo" :class="color"></div>
+			
+			<div class="demo" :style="{backgroundColor: color}"></div>
+			<div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
+			<div class="demo" :style="myStyle"></div>
+			<input type="text" v-model="color">
+			<input type="text" v-model="width">
+
+		</div>	
+	</div>
+
+
+
+</body>
+<script type="text/javascript" src="vendor/bootstrap.js"></script>
+<script type="text/javascript" src="vendor/vue.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>

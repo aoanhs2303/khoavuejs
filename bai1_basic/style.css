@@ -1,0 +1,19 @@
+*{margin: 0; padding: 0;} 
+.demo {
+	height: 50px;
+	width: 50px;
+	background-color: #333;
+	margin: 5px;
+	display: inline-block;
+}
+.red {
+	background-color: orangered;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.green {
+	background-color: green;
+}
